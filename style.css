@@ -1,0 +1,132 @@
+* {
+    box-sizing: border-box;
+    font-family: "Barlow Semi Condensed", sans-serif;
+}
+body {
+    margin-top: 5vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: hsl(210, 46%, 95%);
+    padding: 0px 20px;
+    gap: 1rem;
+}
+.container {
+    display: grid;
+    grid-template-areas:
+    "one "
+    "two"
+    "three"
+    "four"
+    "five";
+    gap: 1.5em;
+    font-size: 13px; 
+}
+
+.items {
+    border-radius: 10px;
+    width: 100%;
+    padding: 1.5em;
+    box-shadow: 5px 5px 10px hsl(0, 2%, 75%);;
+}
+h1 {
+    color: hsl(210, 46%, 95%);
+    font-weight: 600;
+    font-size: 1.2rem;
+}
+p {
+    color: hsl(0, 0%, 81%);
+    font-weight: 500;
+    font-size: 0.8rem;
+}
+.name {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    gap: 1rem;
+}
+.person {
+    width: 35px;
+    height: 35px;
+    border: 3px solid hsl(263deg 47% 83.19%);
+    border-radius: 50px;
+}
+.name h4 {
+    color: hsl(210, 46%, 95%);
+    font-weight: 600;
+    font-size: 0.8rem;
+}
+.name h4 span{
+    display: block; 
+    color: hsl(0, 0%, 81%);
+}
+.name .quat {
+    width: 6rem;
+    height: 6rem;
+    position: absolute;
+    right: 3em;
+    top: 2em;
+    z-index: -1;
+}
+.item1 {
+    position: relative;
+    background-color: hsl(263, 55%, 52%);
+    z-index: 1;
+    grid-area: one;
+}
+.item2 {
+    background-color: hsl(217, 19%, 35%);
+    grid-area: two;
+}
+.item3 {
+    background-color: hsl(0, 0%, 100%);
+    grid-area: three;
+}
+.item4 {
+    background-color: hsl(219, 29%, 14%);
+    grid-area: four;
+}
+.item5 {
+    background-color: hsl(0, 0%, 100%);
+    grid-area: five;
+}
+.item3 h1,
+.item5 h1{
+    color: hsl(217, 19%, 35%);
+}
+.item3 h4 ,
+.item5 h4 {
+    color: hsl(217, 19%, 35%);
+    font-weight: 600;
+    font-size: 0.8rem;
+}
+.item3 p ,
+.item5 p {
+    color: hsl(0, 2%, 68%);
+}
+@media screen and (min-width: 55em){
+    body {
+        height: 100svh;
+        overflow: hidden;
+    }
+    .container {
+        max-width: 1000px;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-areas:
+        "one one two five"
+        "three four four five";
+    }
+}
+@media screen and (min-width: 700px) and  (max-width: 54.9em){
+
+    .container {
+
+        grid-auto-columns: 1fr;
+        grid-template-areas:
+        "one one five"
+        "two three five"
+        "four four four";
+        
+    }
+}
